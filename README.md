@@ -29,6 +29,13 @@ Il vous permettra :
 - d'afficher vos notes
 - d'afficher votre emploi du temps (pour la journée) (WIP)
 - et d'autres options qui arriveront bientôt
+<details>
+  <summary>Lieux fonctionnels pour le bot</summary>  
+    <details>
+      <summary>76 - Académie de Normandie</summary>
+        -Lycée Jules Siegfried, Le Havre.
+    </details>
+</details>
 
 ## Utilisation
 
