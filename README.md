@@ -1,5 +1,5 @@
 # pronote-bot
-Bot discord utilisant le module NPM "<a href="https://www.npmjs.com/package/pronote-api">pronote-API</a>" de litarvan
+Bot discord utilisant le module NPM "<a href="https://www.npmjs.com/package/pronote-api" target="_blank">pronote-API</a>" de litarvan
 
 <div align="center">
   <br />
