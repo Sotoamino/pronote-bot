@@ -15,12 +15,12 @@ Bot discord utilisant l'API "pronote-API" de litarvan
 
 ## Table of contents
 
-- [A propos](#A propos)
+- [A propos](#A_propos)
 - [Utilisation](#Utilisation)
-- [Stockage des données](#Stockage des données)
+- [Stockage des données](#Stockage_des_données)
 - [Créateur](#Créateurs)
 
-## A propos
+## A_propos
 
 Le Pronote-bot est une création française (normal ;) ) codé en [Node.js](https://nodejs.org) .
 
@@ -47,7 +47,7 @@ Il vous permettra :
 
 Actuellement, le bot ne fonctionne que pour le lycée Jules Siegfried du Havre.
 
-## Stockage des données
+## Stockage_des_données
 
 Toutes vos données sont Haschés, salés, enregistrés et fluidifié.
 
