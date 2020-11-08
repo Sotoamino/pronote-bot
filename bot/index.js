@@ -28,23 +28,25 @@ client.on('message', (message) => {
 
     //commandes Publique
     let session = {}
+    let password = ""
     let servData = require('./config.js');
     let prefix = servData.bot.configuration.prefix //set prefix a prefix du serveur
     if(message.author.bot) return; //filtrer à utilisateur n'est pas bot
     if(!message.content.startsWith(prefix)) return; //filtrer à message commençant par prefix
-    if(!message.content.startsWith("?register") || !message.content.startsWith("?aide")) {
-        console.log("ok")
-
-        user = JSON.parse(fs.readFileSync(`./data/${message.author.id}.json`,function(err,data){
-    //the err variable substitutes for the fs.exists callback function variable
-    if (err){
-        return message.channel.send('Vous ne vous êtes jamais enregistré sur la base de donnée du bot. Faites ?register')
-    }}))
-        let password = crypt.AES.decrypt(user.pwd, 'CLE DE CHIFFRAGE').toString(crypt.enc.Utf8);
-        session = {url : 'https://0760056y.index-education.net/pronote',name :  user.name, pwd : password, cas : "ac-rouen"}
-    }
     const args = message.content.slice(prefix.length).trim().split(/ +/g); //clean uo de la commande
-    let commandeName = args.shift() //récupérer le nom de la commande
+    let commandeName = args.shift()
+    fs.stat(`./data/${message.author.id}.json`, function(err) {
+        if (!err) {
+            console.log("ok")
+            user = JSON.parse(fs.readFileSync(`./data/${message.author.id}.json`,function(err,data){
+                if (err){
+                    return message.channel.send('Vous ne vous êtes jamais enregistré sur la base de donnée du bot. Faites ?register')
+                }}))
+            password = crypt.AES.decrypt(user.pwd, 'HERHDgsrhisgs23ZR23RF').toString(crypt.enc.Utf8);
+            session = {url : 'https://0760056y.index-education.net/pronote',name :  user.name, pwd : password, cas : "ac-rouen"}
+        }
+    });
+ //récupérer le nom de la commande
     fs.stat(`./commandes/${commandeName}.js`, function(err, stat) { //vérifier si la commande existe
         if (err === null) {  //si pas d'erreur
             const commandeAction = require(`./commandes/${commandeName}.js`) //require la commande
