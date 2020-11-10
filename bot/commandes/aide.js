@@ -1,9 +1,6 @@
 const pronote = require('pronote-api');
-
 const Discord = require('discord.js');
-const fs = require('fs');
-const crypt = require("crypto-js")
-
+//importation//
 
 exports.run = (message, args, session) => {
 const embed = new Discord.MessageEmbed()
